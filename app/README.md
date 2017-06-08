@@ -2,4 +2,4 @@
 
 ### 入口
 
-`pages/index.js`
+`pages/index.jsx`
