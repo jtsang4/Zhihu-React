@@ -1,10 +1,14 @@
 import React from 'react'
+
+import CommonHeader from 'components/CommonHeader'
 import './style.less'
 
 class Home extends React.PureComponent {
   render () {
     return (
-      <h1>Home</h1>
+      <div id="home">
+        <CommonHeader/>
+      </div>
     )
   }
 }

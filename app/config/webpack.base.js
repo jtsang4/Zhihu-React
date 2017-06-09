@@ -4,8 +4,8 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 
-const extractCSSWebpackPlugin = new ExtractTextWebpackPlugin('css/styles1.css') // 分离css
-const extractLessWebpackPlugin = new ExtractTextWebpackPlugin('css/styles2.css') // 分离less
+const extractCSSWebpackPlugin = new ExtractTextWebpackPlugin('css/vendor.css') // 分离css
+const extractLessWebpackPlugin = new ExtractTextWebpackPlugin('css/styles.css') // 分离less
 
 module.exports = {
   // 打包入口
@@ -22,9 +22,11 @@ module.exports = {
   // 模块解析配置
   resolve: {
     alias: {
-      app: path.resolve(__dirname, '..'), // 前端 app 目录
-      pages: path.resolve(__dirname, '../pages'), // 子页面目录
-      components: path.resolve(__dirname, '../components') // 前端 components 目录
+      app: path.resolve(__dirname, '..'), // app 目录
+      assets: path.resolve(__dirname, '../assets'), // 静态资源目录目录
+      static: path.resolve(__dirname, '../static'), // 第三方静态资源目录目录
+      containers: path.resolve(__dirname, '../containers'), // 子页面目录
+      components: path.resolve(__dirname, '../components') // components 目录
     },
     extensions: ['.js', '.jsx', '.json']
   },
@@ -39,7 +41,6 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
         use: extractCSSWebpackPlugin.extract({
           fallback: 'style-loader?singleton',
           use: [
@@ -80,7 +81,7 @@ module.exports = {
     extractLessWebpackPlugin,
     // HTML模板
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, '../pages/index.html')
+      template: path.resolve(__dirname, '../containers/index.html')
     }),
     // 编译时的全局变量
     new webpack.DefinePlugin({
