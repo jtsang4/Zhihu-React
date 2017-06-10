@@ -1,7 +1,10 @@
 import React from 'react'
 
 class NotFound extends React.PureComponent {
-  render () {
+  constructor(props) {
+    super(props)
+  }
+  render() {
     return (
       <h1>404</h1>
     )

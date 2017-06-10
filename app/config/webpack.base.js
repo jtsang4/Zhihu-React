@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 
 const extractCSSWebpackPlugin = new ExtractTextWebpackPlugin('css/vendor.css') // 分离css
@@ -62,14 +63,19 @@ module.exports = {
         })
       },
       {
-        test: /\.(png|jpg|jpeg|gif|bmp)$/i,
+        test: /\.(png|jpg|jpeg|gif|bmp|ico)$/i,
         exclude: /node_modules/,
-        use: 'url-loader?limit=5000&name=imgs/[name].[hash:8].[ext]'
+        use: 'url-loader?limit=1000&name=assets/imgs/[name].[hash:8].[ext]&publicPath=/'
       },
       {
         test: /\.(woff|woff2|svg|ttf|eot)$/i,
         exclude: /node_modules/,
-        use: 'url-loader?limit=5000&name=fonts/[name].[hash:8].[ext]'
+        use: 'url-loader?limit=1000&name=assets/fonts/[name].[hash:8].[ext]&publicPath=/'
+      },
+      {
+        test: /\.html$/,
+        exclude: /node_modules/,
+        use: { loader: 'html-loader', options: {minimize: true, attrs: ['img:src', 'link:href']} }
       }
     ]
   },
@@ -86,6 +92,10 @@ module.exports = {
     // 编译时的全局变量
     new webpack.DefinePlugin({
       __ENV__: JSON.stringify(process.env.NODE_ENV)
-    })
+    }),
+    // 把源文件静态资源复制到打包的指定目录下
+    new CopyWebpackPlugin([
+      { from: 'app/assets/dynamic/imgs', to: 'dynamic/imgs' }
+    ])
   ]
 }

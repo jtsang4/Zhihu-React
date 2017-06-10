@@ -4,10 +4,13 @@ import CommonHeader from 'components/CommonHeader'
 import './style.less'
 
 class Home extends React.PureComponent {
-  render () {
+  constructor(props) {
+    super(props)
+  }
+  render() {
     return (
       <div id="home">
-        <CommonHeader/>
+        <CommonHeader pathname={this.props.location.pathname}/>
       </div>
     )
   }

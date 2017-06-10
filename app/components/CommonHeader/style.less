@@ -1,4 +1,98 @@
+@border: 1px solid #045bb2;
+@height: 45px;
+@border-radius-width: 4px;
+@btn-primary: #0e78e7;
+
 #common-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #0767c8;
-  
+  .header-wrap {
+    width: 960px;
+    height: @height;
+    margin: 0 auto;
+    .zhihu-logo {
+      width: 61px;
+      height: 100%;
+      vertical-align: top;
+      background-image: url('../../assets/imgs/zhihu_logo.png');
+      background-repeat: no-repeat;
+      background-position: 0 8px;
+    }
+    .search {
+      height: 100%;
+      margin-left: 12px;
+      vertical-align: top;
+      input {
+        width: 300px;
+        height: 15px;
+        margin-top: 8px;
+        border: @border;
+        padding: 7px 50px 7px 10px;
+        border-radius: @border-radius-width;
+        background-color: #e1eaf2;
+        box-sizing: content-box;
+        &:focus {
+          background-color: #fff;
+        }
+      }
+      button {
+        top: 7px;
+        right: 0px;
+        width: 40px;
+        height: 32px;
+        border: @border;
+        border-top-right-radius: @border-radius-width;
+        border-bottom-right-radius: @border-radius-width;
+        background-color: @btn-primary;
+      }
+    }
+    .navs {
+      padding-left: 18px;
+      height: 100%;
+      line-height: @height;
+      vertical-align: top;
+      li {
+        height: 100%;
+        line-height: @height;
+        .nav {
+          width: 54px;
+          height: 100%;
+          color: #eee;
+          font-size: 14px;
+          text-align: center;
+          vertical-align: middle;
+          &:hover {
+            color: #fff;
+          }
+        }
+        &.active {
+          background-color: #075fb6;
+          .nav {
+            color: #fff;
+            &:hover {
+              color: #eee;
+            }
+          }
+        }
+      }
+    }
+    .ask {
+      margin-top: 7px;
+      margin-right: 15px;
+      width: 64px;
+      height: 31px;
+      line-height: 29px;
+      border: @border;
+      border-radius: @border-radius-width;
+      color: #fff;
+      vertical-align: top;
+      background: @btn-primary;
+      span {
+        vertical-align: 14px;
+      }
+    }
+  }
 }
