@@ -2,7 +2,9 @@
 import {combineReducers} from 'redux'
 
 import userInfoReducer from './userInfo'
+import routeReducer from './route'
 
 export default combineReducers({
-  userInfo: userInfoReducer
+  userInfo: userInfoReducer,
+  route: routeReducer
 })

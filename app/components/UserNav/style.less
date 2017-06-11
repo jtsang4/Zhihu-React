@@ -1,15 +1,21 @@
 #user-nav {
   width: 120px;
   height: 45px;
-  padding-top: 7px;
-  padding-left: 10px;
   font-size: 14px;
   &:hover {
-    background-color: #075fb6;
+    .title {
+      background-color: #075fb6;
+    }
+    .user-menus {
+      display: block;
+    }
   }
   .title {
-    height: 31px;
-    line-height: 31px;
+    width: 100%;
+    height: 44px;
+    padding-left: 10px;
+    line-height: 44px;
+    background-color: #0767c8;
     .avatar {
       margin-right: 12px;
       width: 25px;
@@ -18,6 +24,39 @@
     .name {
       color: #fff;
       vertical-align: 8px;
+    }
+  }
+  .user-menus {
+    width: 100%;
+    display: none;
+    .user-menu {
+      width: 100%;
+      height: 45px;
+      &:last-child {
+        a {
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+      }
+      a {
+        display: inline-block;
+        width: 100%;
+        height: 45px;
+        border-bottom: 1px solid #075fb6 * 0.9;
+        padding-left: 15px;
+        line-height: 45px;
+        color: #fff;
+        background-color: #075fb6;
+        &:hover {
+          background-color: #0e78e7;
+        }
+        &:first-child {
+          border-top: 1px solid #075fb6 * 0.9;
+        }
+        i {
+          margin-right: 12px;
+        }
+      }
     }
   }
 }

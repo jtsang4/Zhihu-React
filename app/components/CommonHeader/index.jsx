@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import UserNav from 'components/UserNav'
@@ -7,9 +8,6 @@ import './style.less'
 class CommonHeader extends React.PureComponent {
   constructor (props) {
     super(props)
-    this.state = {
-      userInfo: {}
-    }
   }
   render () {
     return (
@@ -46,20 +44,18 @@ class CommonHeader extends React.PureComponent {
           </div>
           <div className="pull-right full-height">
             <button type="button" className="ask"><span>提问</span></button>
-            <UserNav userInfo={this.state.userInfo}/>
+            <UserNav userInfo={this.props.userInfo}/>
           </div>
         </div>
       </header>
     )
   }
-  componentDidMount() {
-    this.setState({
-      userInfo: {
-        avatar: '/dynamic/imgs/avatar.jpg',
-        username: '包子'
-      }
-    })
+}
+
+function mapStateToProps(state) {
+  return {
+    userInfo: state.userInfo
   }
 }
 
-export default CommonHeader
+export default connect(mapStateToProps)(CommonHeader)

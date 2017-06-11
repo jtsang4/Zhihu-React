@@ -16,7 +16,7 @@ module.exports = {
 
   // 打包输出目录
   output: {
-    path: path.resolve(__dirname, '../build'),
+    path: path.resolve(__dirname, '../../build'),
     filename: '[name].bundle.js'
   },
 

@@ -8,7 +8,7 @@
     "dev": "run-p frontServer backServer",
     "frontServer": "cross-env NODE_ENV=development webpack-dev-server --config ./app/config/webpack.dev.js --progress",
     "backServer": "nodemon ./mock/server.js",
-    "build": "cross-env NODE_ENV=production webpack --config ./app/config/webpack.prod.js --progress"
+    "build": "rm -rf ./build && cross-env NODE_ENV=production webpack --config ./app/config/webpack.prod.js --progress"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
