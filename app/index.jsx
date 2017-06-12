@@ -1,10 +1,16 @@
 // 项目入口，在此引入 store
+/* global __ENV__ */
+
 import React from 'react'
 import {render} from 'react-dom'
 import {Provider} from 'react-redux'
 import {HashRouter as Router} from 'react-router-dom'
-import storeGen from './store'
 
+// 引入css
+import 'normalize.css' // 引入normalize.css
+import 'assets/css/pure/pure.css' //引入 purecss
+import 'assets/css/common.less' // 引入自己定义的基本样式
+import storeGen from './store'
 import App from 'containers/App'
 
 const reduxStore = storeGen() // 创建一个store实例

@@ -46,7 +46,7 @@ module.exports = {
           fallback: 'style-loader?singleton',
           use: [
             'css-loader',
-            { loader: 'postcss-loader', options: {plugins: (loader) => [autoprefixer()]} }
+            { loader: 'postcss-loader', options: {plugins: () => [autoprefixer()]} }
           ]
         })
       },
@@ -57,7 +57,7 @@ module.exports = {
           fallback: 'style-loader?singleton',
           use: [
             'css-loader',
-            { loader: 'postcss-loader', options: {plugins: (loader) => [autoprefixer()]} },
+            { loader: 'postcss-loader', options: {plugins: () => [autoprefixer()]} },
             'less-loader'
           ]
         })

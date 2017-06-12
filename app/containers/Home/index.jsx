@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 import './style.less'
 import CommonHeader from 'components/CommonHeader'
@@ -23,4 +24,12 @@ class Home extends React.PureComponent {
   }
 }
 
-export default Home
+function mapStateToProps(state) {
+  return {
+    userInfo: state.userInfo
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(Home)

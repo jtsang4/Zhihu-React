@@ -2,15 +2,9 @@
 import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {Route} from 'react-router-dom'
+import {Route, withRouter} from 'react-router-dom'
 
 import * as userInfoActions from 'app/actions/userInfo'
-
-// 引入css
-import 'normalize.css' // 引入normalize.css
-import 'assets/css/pure/pure.css' //引入 purecss
-import 'assets/css/common.less' // 引入自己定义的基本样式
-
 import Home from './Home'
 import Hello from './Hello'
 
@@ -34,19 +28,15 @@ class App extends React.PureComponent {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    userInfo: state.userInfo
-  }
-}
-
 function mapDispathToProps(dispatch) {
   return {
     userInfoActions: bindActionCreators(userInfoActions, dispatch)
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispathToProps
-)(App)
+export default withRouter(
+  connect(
+    null,
+    mapDispathToProps
+  )(App)
+)
