@@ -2,4 +2,4 @@
 
 ### 入口
 
-`containers/index.jsx`
+`index.jsx`
