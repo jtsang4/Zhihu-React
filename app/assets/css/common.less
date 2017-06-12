@@ -7,6 +7,7 @@ html, body {
 body {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-size: 13px;
+  word-wrap: break-word;
 }
 a {
   color: #000;
@@ -70,11 +71,9 @@ ul {
 .pointer {
   cursor: pointer;
 }
-[class*=sprite-global-] {
+[class*=sprite-global-icon-] {
   background-image: url("../imgs/sprites-global.png");
   background-repeat: no-repeat;
-}
-[class*=sprite-global-icon-] {
   display: inline-block;
   vertical-align: middle;
 }
@@ -82,6 +81,36 @@ ul {
   background-position: -82px 0;
   width: 15px;
   height: 15px;
+}
+[class*=sprite-home-icon-] {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url("../imgs/sprites-home.png");
+  background-repeat: no-repeat;
+}
+.sprite-home-icon-question-off {
+  width: 24px;
+  height: 24px;
+  background-position: -148px -30px;
+  a:hover & {
+    background-position: -122px -30px;
+  }
+}
+.sprite-home-icon-answer-off {
+  width: 24px;
+  height: 24px;
+  background-position: -96px -30px;
+  a:hover & {
+    background-position: -96px -56px;
+  }
+}
+.sprite-home-icon-post-off {
+  width: 24px;
+  height: 24px;
+  background-position: -122px -56px;
+  a:hover & {
+    background-position: -174px -30px;
+  }
 }
 [class*=sprite-normal-icon-] {
   width: 20px;

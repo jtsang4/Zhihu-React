@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 
 import './style.less'
 import CommonHeader from 'components/CommonHeader'
+import HomeEntry from 'components/HomeEntry'
 import Feeds from './subpages/Feeds'
 
 class Home extends React.PureComponent {
@@ -13,9 +14,12 @@ class Home extends React.PureComponent {
     return (
       <div id="home">
         <CommonHeader pathname={this.props.location.pathname}/>
-        <div className="main-content clearfix">
-          <div className="feeds pull-left">
-            <Feeds/>
+        <div className="main clearfix">
+          <div className="main-container pull-left">
+            <div className="main-content">
+              <HomeEntry userInfo={this.props.userInfo}/>
+              <Feeds/>
+            </div>
           </div>
           <div className="sidebar pull-left">sidebar</div>
         </div>

@@ -1,0 +1,53 @@
+@normalColor:  #6c829f;
+@activeColor: #259;
+@decorationColor: #f0f0f0;
+@border-radius-width: 4px;
+
+#home-entry {
+  margin-bottom: 30px;
+  font-size: 14px;
+  .home-entry-avatar {
+    height: 38px;
+    img {
+      width: 38px;
+      height: 38px;
+    }
+  }
+  .home-entry-box {
+    margin-left: 58px;
+    border: 1px solid @decorationColor;
+    border-radius: @border-radius-width;
+    .home-entry-item {
+      padding: 0 32px 0 27px;
+      line-height: 48px;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 20px;
+        left: 0;
+        top: 50%;
+        margin-top: -10px;
+        background: @decorationColor;
+      }
+      &:first-child:after {
+        width: 0;
+        height: 0;
+      }
+      a {
+        color: @normalColor;
+        &:hover {
+          color: @activeColor;
+        }
+      }
+    }
+    .draft {
+      margin-right: 20px;
+      color: @normalColor;
+      line-height: 48px;
+      &:hover {
+        color: @activeColor;
+      }
+    }
+  }
+}
