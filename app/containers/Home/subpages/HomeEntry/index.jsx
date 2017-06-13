@@ -1,6 +1,6 @@
-// dumb component, needs props: userInfo
+// 首页用户的提问，回答导航入口，需要传递userInfo
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 
 import './style.less'
 
@@ -15,6 +15,7 @@ class HomeEntry extends React.PureComponent {
           <img src={this.props.userInfo.avatar} alt="头像"/>
         </div>
         <div className="home-entry-box relative clearfix">
+          <span className="home-entry-box-arrow"></span>
           <ul className="pull-left">
             <li className="home-entry-item inline-block relative">
               <a className="pointer">
@@ -42,4 +43,12 @@ class HomeEntry extends React.PureComponent {
   }
 }
 
-export default HomeEntry
+function mapStateToProps(state) {
+  return {
+    userInfo: state.userInfo
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(HomeEntry)

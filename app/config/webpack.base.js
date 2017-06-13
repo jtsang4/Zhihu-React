@@ -45,7 +45,7 @@ module.exports = {
         use: extractCSSWebpackPlugin.extract({
           fallback: 'style-loader?singleton',
           use: [
-            'css-loader',
+            'css-loader?minimize',
             { loader: 'postcss-loader', options: {plugins: () => [autoprefixer()]} }
           ]
         })
@@ -56,7 +56,7 @@ module.exports = {
         use: extractLessWebpackPlugin.extract({
           fallback: 'style-loader?singleton',
           use: [
-            'css-loader',
+            'css-loader?minimize',
             { loader: 'postcss-loader', options: {plugins: () => [autoprefixer()]} },
             'less-loader'
           ]
@@ -91,7 +91,10 @@ module.exports = {
     }),
     // 编译时的全局变量
     new webpack.DefinePlugin({
-      __ENV__: JSON.stringify(process.env.NODE_ENV)
+      __ENV__: JSON.stringify(process.env.NODE_ENV), // 方便在代码中取值的环境变量
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV) // 库所依赖的环境变量
+      }
     }),
     // 把源文件静态资源复制到打包的指定目录下
     new CopyWebpackPlugin([

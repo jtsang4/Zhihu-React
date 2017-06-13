@@ -1,5 +1,5 @@
+// 基本的上方导航组件，需要传递userInfo
 import React from 'react'
-import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import UserNav from 'components/UserNav'
@@ -52,10 +52,4 @@ class CommonHeader extends React.PureComponent {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    userInfo: state.userInfo
-  }
-}
-
-export default connect(mapStateToProps)(CommonHeader)
+export default CommonHeader

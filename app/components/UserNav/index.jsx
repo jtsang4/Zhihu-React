@@ -1,3 +1,4 @@
+// 头部导航中的用户导航组件，需要传递userInfo信息
 import React from 'react'
 import {Link} from 'react-router-dom'
 

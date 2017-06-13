@@ -3,8 +3,9 @@ import {connect} from 'react-redux'
 
 import './style.less'
 import CommonHeader from 'components/CommonHeader'
-import HomeEntry from 'components/HomeEntry'
+import HomeEntry from './subpages/HomeEntry'
 import Feeds from './subpages/Feeds'
+import MainSidebar from './subpages/MainSidebar'
 
 class Home extends React.PureComponent {
   constructor(props) {
@@ -13,15 +14,17 @@ class Home extends React.PureComponent {
   render() {
     return (
       <div id="home">
-        <CommonHeader pathname={this.props.location.pathname}/>
+        <CommonHeader pathname={this.props.location.pathname} userInfo={this.props.userInfo}/>
         <div className="main clearfix">
           <div className="main-container pull-left">
             <div className="main-content">
-              <HomeEntry userInfo={this.props.userInfo}/>
+              <HomeEntry/>
               <Feeds/>
             </div>
           </div>
-          <div className="sidebar pull-left">sidebar</div>
+          <div className="sidebar pull-left">
+            <MainSidebar/>
+          </div>
         </div>
       </div>
     )
