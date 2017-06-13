@@ -35,6 +35,11 @@ ul {
   padding-left: 0;
   list-style-type: none;
 }
+h3 {
+  font-weight: 700;
+  font-size: 14px;
+  outline: 0;
+}
 .full-width {
   width: 100%;
 }
@@ -132,4 +137,107 @@ ul {
 }
 .sprite-normal-icon-logout {
   background-position: -6px -87px;
+}
+.zg-icon {
+  margin-right: 4px;
+  width: 14px;
+  height: 14px;
+  background-image: url("../imgs/sprites-normal.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: -2px;
+  &-sidenav-fav {
+    background-position: -167px -4px;
+    a:hover & {
+      background-position: -167px -24px;
+    }
+  }
+  &-sidenav-follow {
+    background-position: -183px -4px;
+    a:hover & {
+      background-position: -183px -24px;
+    }
+  }
+  &-sidenav-invite {
+    background-position: -200px -4px;
+    a:hover & {
+      background-position: -200px -24px;
+    }
+  }
+  &-sidenav-publicedit {
+    background-position: -269px -4px;
+    a:hover & {
+      background-position: -269px -24px;
+    }
+  }
+}
+.z-sidenav-icon {
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  left: -1px;
+  margin-right: 4px;
+  background-image: url("../imgs/icons_a.png");
+  &-community {
+    width: 14px;
+    height: 13px;
+    background-position: -24px -41px;
+    a:hover & {
+      background-position: -67px -39px;
+    }
+  }
+}
+.z-icon-list {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+  background-image: url("../imgs/icons_b.png");
+  background-repeat: no-repeat;
+  &-normal {
+    width: 25px;
+    height: 25px;
+    background-position: 0 0;
+  }
+}
+.icon-purse {
+  margin-right: 4px;
+  width: 14px;
+  height: 14px;
+  background-image: url("../imgs/icon-purse.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: -2px;
+  background-size: contain;
+  background-position: left center;
+  a:hover &{
+    background-image: url("../imgs/icon-purse-hover.svg");
+  }
+}
+.icon-coupon {
+  margin-right: 4px;
+  width: 14px;
+  height: 14px;
+  background-image: url("../imgs/icon-coupon.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: -2px;
+  background-size: contain;
+  background-position: left center;
+  a:hover &{
+    background-image: url("../imgs/icon-coupon-hover.svg");
+  }
+}
+.icon-copyright {
+  margin-right: 4px;
+  width: 14px;
+  height: 14px;
+  background-image: url("../imgs/icon-copyright.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: -2px;
+  background-size: 13px 13px;
+  background-position: left center;
+  a:hover &{
+    background-image: url("../imgs/icon-copyright-hover.svg");
+  }
 }
