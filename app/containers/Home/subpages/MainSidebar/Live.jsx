@@ -22,7 +22,7 @@ class Live extends React.PureComponent {
                 <li className="live-item" key={index}>
                   <a className="pointer">
                     <img src={live.avatar} className="live-avatar"/>
-                    <span>{live.title}</span>
+                    <span className="live-title">{live.title}</span>
                   </a>
                 </li>
               )

@@ -22,7 +22,7 @@ class RoundTable extends React.PureComponent {
                 <li className="round-item" key={index}>
                   <a className="pointer clearfix">
                     <img src={round.icon} className="round-icon"/>
-                    <span>{round.title}</span>
+                    <span className="round-title">{round.title}</span>
                     <span className="remainder-time pull-right">
                       {
                         (() => {

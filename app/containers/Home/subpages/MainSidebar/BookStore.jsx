@@ -21,9 +21,9 @@ class BookStore extends React.PureComponent {
               return (
                 <li className="round-item" key={index}>
                   <a className="pointer clearfix">
-                    <img src={round.avatar} className="round-avatar"/>
+                    <img src={round.icon} className="round-icon"/>
                     <span>{round.title}</span>
-                    <span className="remainder-time pull-right">
+                    <span className="up-time pull-right">
                       {
                         (() => {
                           const currentTime = (new Date()).getTime() // 获取当前时间
@@ -38,7 +38,6 @@ class BookStore extends React.PureComponent {
                         })()
                       }
                     </span>
-                    <span className="fav pull-right hidden">关注圆桌</span>
                   </a>
                 </li>
               )
@@ -52,9 +51,9 @@ class BookStore extends React.PureComponent {
 
 BookStore.defaultProps = {
   rounds: [
-    { avatar: 'dynamic/imgs/round-icon1.jpg', title: '消失的爸爸', time: '1497427058580' },
-    { avatar: 'dynamic/imgs/round-icon2.jpg', title: '艺术的跨界之旅', time: '1497787200000' },
-    { avatar: 'dynamic/imgs/round-icon3.jpg', title: '玩具有意思', time: '1497844800000' }
+    { icon: 'dynamic/imgs/book-icon1.jpg', title: '不上班的理想生活', time: '1497538800000' },
+    { icon: 'dynamic/imgs/book-icon2.jpg', title: '茶掌柜带你入门：年轻人的第一杯茶（乌龙茶篇）', time: '1497787200000' },
+    { icon: 'dynamic/imgs/book-icon3.jpg', title: '刑事辩护指导书', time: '1497844800000' }
   ]
 }
 

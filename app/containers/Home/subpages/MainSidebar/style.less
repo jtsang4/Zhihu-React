@@ -16,7 +16,7 @@
 #main-sidebar {
   .side-nav-group {
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 13px;
     .block-title {
       margin-bottom: 10px;
     }
@@ -66,6 +66,9 @@
           margin-right: 8px;
           vertical-align: middle;
         }
+        .live-title {
+          display: inline-block;
+        }
         a {
           @item-link();
         }
@@ -84,16 +87,23 @@
     .round-items {
       margin-left: -10px;
       .round-item {
-        .round-icon {
-          width: 25px;
-          height: 25px;
-          margin-right: 8px;
-          vertical-align: middle;
-        }
         a {
           @item-link();
           &:hover .remainder-time {
             display: none;
+          }
+          .round-icon {
+            width: 25px;
+            height: 25px;
+            margin-right: 8px;
+            vertical-align: super;
+          }
+          .round-title {
+            display: inline-block;
+            max-width: 170px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
           }
           .fav {
             color: @color;
