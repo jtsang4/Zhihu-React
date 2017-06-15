@@ -105,8 +105,12 @@
             overflow: hidden;
             white-space: nowrap;
           }
+          .remainder-time {
+            padding-right: 12px;
+          }
           .fav {
             color: @color;
+            padding-right: 12px;
             &:hover {
               color: @hoverColor;
             }
@@ -116,6 +120,52 @@
           }
         }
       }
+    }
+  }
+  #book-store {
+    .category-book {
+      a {
+        color: #698ebf;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .book-items {
+      margin-left: -10px;
+      .book-item {
+        a {
+          @item-link();
+          &:hover .remainder-time {
+            display: none;
+          }
+          .book-icon {
+            width: 25px;
+            height: 25px;
+            margin-right: 8px;
+            vertical-align: super;
+          }
+          .book-title {
+            display: inline-block;
+            max-width: 170px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+          .up-time {
+            padding-right: 12px;
+          }
+          &:hover .fav {
+            display: inline!important;
+          }
+        }
+      }
+    }
+  }
+  #download-app {
+    .item-link {
+      @item-link();
+      margin-left: -10px;
     }
   }
 }

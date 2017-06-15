@@ -52,9 +52,9 @@ class RoundTable extends React.PureComponent {
 
 RoundTable.defaultProps = {
   rounds: [
-    { icon: 'dynamic/imgs/round-icon1.jpg', title: '消失的爸爸', time: '1497427058580' },
-    { icon: 'dynamic/imgs/round-icon2.jpg', title: '艺术的跨界之旅', time: '1497787200000' },
-    { icon: 'dynamic/imgs/round-icon3.jpg', title: '玩具有意思', time: '1497844800000' }
+    { icon: 'dynamic/imgs/round-icon1.jpg', title: '消失的爸爸', time: (new Date()).getTime() + 60 * 60 * 1000 },
+    { icon: 'dynamic/imgs/round-icon2.jpg', title: '艺术的跨界之旅', time: (new Date()).getTime() + 3 * 24 * 60 * 60 * 1000 },
+    { icon: 'dynamic/imgs/round-icon3.jpg', title: '玩具有意思', time: (new Date()).getTime() + 4 * 24 * 60 * 60 * 1000 }
   ]
 }
 

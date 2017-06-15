@@ -6,6 +6,7 @@ import './style.less'
 import SideNav from './SideNav'
 import Live from './Live'
 import RoundTable from './RoundTable'
+import BookStore from './BookStore'
 
 class MainSidebar extends React.PureComponent {
   constructor(props) {
@@ -51,6 +52,15 @@ class MainSidebar extends React.PureComponent {
         </ul>
       </div>
     )
+    // 下载
+    const download = (
+      <div id="download-app" className="side-nav-group border-side-nav-group">
+        <a className="item-link pointer">
+          <i className="z-icon-zhihu"></i>
+          <span>下载 App</span>
+        </a>
+      </div>
+    )
     return (
       <div id="main-sidebar">
         <SideNav/>
@@ -58,6 +68,8 @@ class MainSidebar extends React.PureComponent {
         {column}
         <Live/>
         <RoundTable/>
+        <BookStore/>
+        {download}
       </div>
     )
   }
